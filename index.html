@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawlystats - Valeur compte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-spacing: 0;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        td {
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        input[type="number"] {
+            width: 80px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: left;
+        }
+
+        tfoot {
+            background-color: #f4f4f4;
+        }
+
+        .total {
+            font-weight: bold;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Brawlystats</a></li>
+            <li><a href="https://teocodeur.github.io/brawlystats/calculator">Valeur compte</a></li>
+            <li><a href="#playerstats">Stats joueur</a></li>
+            <li><a href="#maps">Cartes</a></li>
+            <li><a href="#gamemode">Mode de jeu</a></li>
+            <li><a href="#contact">À propos</a></li>
+        </ul>
+    </nav>
+    <h1>Calculer la valeur de votre compte brawl stars</h1>
+    <p>Attention, ce calculateur vous donne un estimatif de l'argent que vous devriez mettre en partant de zéro pour arriver à votre compte actuel.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Libellé</th>
+                <th>Quantité</th>
+                <th>Valeur en euro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Brawleur (gemmes) -->
+            <tr>
+                <td>Brawleur (gemmes)</td>
+                <td><input type="number" id="brawleur" value="0"></td>
+                <td id="brawleur-euro">
+                    <a href="https://pixelcrux.com/Brawl_Stars/Brawler_Progress/App">Obtenir le nombre de gemmes</a> - €
+                </td>
+            </tr>
+            <!-- Skins -->
+            <tr>
+                <td>Skins rare (nombre)</td>
+                <td><input type="number" id="skins_rare" value="0"></td>
+                <td id="skins_rare-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Skins super rare (nombre)</td>
+                <td><input type="number" id="skins_super_rare" value="0"></td>
+                <td id="skins_super_rare-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Skins epique (nombre)</td>
+                <td><input type="number" id="skins_epique" value="0"></td>
+                <td id="skins_epique-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Skins mythique (nombre)</td>
+                <td><input type="number" id="skins_mythique" value="0"></td>
+                <td id="skins_mythique-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Skins legendaire (nombre)</td>
+                <td><input type="number" id="skins_legendaire" value="0"></td>
+                <td id="skins_legendaire-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Skins hypercharge (nombre)</td>
+                <td><input type="number" id="skins_hypercharge" value="0"></td>
+                <td id="skins_hypercharge-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Skins argent (nombre)</td>
+                <td><input type="number" id="skins_argent" value="0"></td>
+                <td id="skins_argent-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Skins or (nombre)</td>
+                <td><input type="number" id="skins_or" value="0"></td>
+                <td id="skins_or-euro">- €</td>
+            </tr>
+            <!-- Hypercharge -->
+            <tr>
+                <td>Hypercharge (nombre)</td>
+                <td><input type="number" id="hypercharge" value="0"></td>
+                <td id="hypercharge-euro">- €</td>
+            </tr>
+            <!-- Équipement -->
+            <tr>
+                <td>Équipement rare (nombre)</td>
+                <td><input type="number" id="equipement_rare" value="0"></td>
+                <td id="equipement_rare-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Équipement épique (nombre)</td>
+                <td><input type="number" id="equipement_epique" value="0"></td>
+                <td id="equipement_epique-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Équipement mythique (nombre)</td>
+                <td><input type="number" id="equipement_mythique" value="0"></td>
+                <td id="equipement_mythique-euro">- €</td>
+            </tr>
+            <!-- Communication -->
+            <tr>
+                <td>Émotes commune</td>
+                <td><input type="number" id="emotes_commune" value="0"></td>
+                <td id="emotes_commune-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Émotes rare</td>
+                <td><input type="number" id="emotes_rare" value="0"></td>
+                <td id="emotes_rare-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Émotes épique</td>
+                <td><input type="number" id="emotes_epique" value="0"></td>
+                <td id="emotes_epique-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Émotes collector</td>
+                <td><input type="number" id="emotes_collector" value="0"></td>
+                <td id="emotes_collector-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Icônes joueur</td>
+                <td><input type="number" id="icones_joueur" value="0"></td>
+                <td id="icones_joueur-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Tags</td>
+                <td><input type="number" id="tags" value="0"></td>
+                <td id="tags-euro">- €</td>
+            </tr>
+            <!-- Resources -->
+            <tr>
+                <td>Pièces (nombre)</td>
+                <td><input type="number" id="pieces" value="0"></td>
+                <td id="pieces-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Gemmes (nombre)</td>
+                <td><input type="number" id="gemmes" value="0"></td>
+                <td id="gemmes-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Bling (nombre)</td>
+                <td><input type="number" id="blings" value="0"></td>
+                <td id="blings-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Points de pouvoir (nombre)</td>
+                <td><input type="number" id="points_pouvoir" value="0"></td>
+                <td id="points_pouvoir-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Doubleurs d'XP (nombre)</td>
+                <td><input type="number" id="doubleurs_xp" value="0"></td>
+                <td id="doubleurs_xp-euro">- €</td>
+            </tr>
+            <tr>
+                <td>Trophées (nombre)</td>
+                <td><input type="number" id="trophees" value="0"></td>
+                <td id="trophees-euro">- €</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2" class="total">Total</td>
+                <td id="total-euro">- €</td>
+            </tr>
+        </tfoot>
+    </table>
+    <p>Le calcul est basé sur l'achat de l'offre la plus avantageuse permanente du jeu.</p>
+    <script src="script.js"></script>
+    <p>Ce calculateur n'a pas été approuver par Supercell</p>
+    <p1 style="text-align: center; margin-left: 10px; margin-right: 10px; font-size: 12px;color: #000;">Copyright © 2024 Brawlystats. Tous droits réservés.</p1>
+</body>
+</html>
